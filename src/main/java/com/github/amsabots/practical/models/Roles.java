@@ -1,5 +1,7 @@
 package com.github.amsabots.practical.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +15,8 @@ public class Roles {
     @Column(name = "ROLE")
     private String roleName;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "roles")
+    @JsonIgnore
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "roles")
     private Set<User> user = new HashSet<>();
 
     public long getId() {
@@ -32,11 +35,8 @@ public class Roles {
         this.roleName = roleName;
     }
 
+
     public Set<User> getUser() {
         return user;
-    }
-
-    public void setUser(Set<User> user) {
-        this.user = user;
     }
 }

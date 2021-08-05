@@ -15,7 +15,8 @@ public class User {
     @Column(name = "NAME")
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_roles",
             joinColumns = {@JoinColumn(name = "userId")},
             inverseJoinColumns = {@JoinColumn(name = "roleId")})

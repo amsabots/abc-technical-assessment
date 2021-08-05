@@ -1,20 +1,20 @@
 package com.github.amsabots.practical.services;
 
-import com.github.amsabots.practical.data.StudentRepository;
+import com.github.amsabots.practical.data.UserRepository;
 import com.github.amsabots.practical.models.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class StudentService {
-    private final StudentRepository studentRepository;
+public class UserService {
+    private final UserRepository studentRepository;
 
-    public StudentService(StudentRepository studentRepository) {
+    public UserService(UserRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
-    public List<User> allStudents(){
+    public List<User> allUsers(){
         return studentRepository.findAll();
     }
 }

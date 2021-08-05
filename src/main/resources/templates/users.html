@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ABC Bank | Technical assessment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row p-5">
+        <div class="d-flex justify-content-center w-100 mb-3">
+            <h4 class="text-info pb-1 text-align-center">User Listing and Role management</h4>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>Role</th>
+                </thead>
+                <tbody>
+                <tr th:each="user:${users}">
+                    <td th:text="${user.id}">serial</td>
+                    <td th:text="${user.name}">name</td>
+                    <td>
+                        <label th:each="role:${user.roles}" th:text="${role.roleName}"
+                        class="badge badge-info px-2 py-1 mr-2">roleName</label>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

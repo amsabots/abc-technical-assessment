@@ -33,8 +33,7 @@ technical asssement for the software developer role
 | ------ | ------ |
 |A USSD acquisation and maintainace is very relatively expensive| A sender ID si easy to acquire and very cheap to use|
 |Some USSD have capability to receive text messages from phone numbers |No capability to receive text from phone numbers|
-|A conversation session ID is maintained by the sms provider and sent as part of the payload in JSON data|No session is created, To achieve this kind of a capability, 
-a developer must expilicitly design a system using either redis or a message Q, to achieve this|
+|A conversation session ID is maintained by the sms provider and sent as part of the payload in JSON data|No session is created, To achieve this kind of capability, a developer must expilicitly design a system using either redis or a message Q to handle session and state management
 
 ## System development plan and design
 - Request for the API documentation from the company managing the USSD.

@@ -12,7 +12,7 @@ technical asssement for the software developer role
  - Locate the bin folder, and `cd to it`, the execute this command ```sudo chmod +x *.sh ```. This will set the executable on all `.sh`.
  - The files contain instructions to install postgres database container via docker. *Its is very mandatory to have docker installed*
  
-  >Incase you do have docker installed but have postgres running on your compute :-
+  >Incase you do not have docker installed but have postgres running on your computer :-
   > Open the project with your favourite IDEA and change the `applications.properties` to point to your postgres instance.
   
   - After docker installs postgres successfully, Proceed to the application source code, Open it with your editor and start the main function

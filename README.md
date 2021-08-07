@@ -26,7 +26,7 @@ technical asssement for the software developer role
   
   # Steps to create a USSD Application
   
-  To create a UUSD application, first as a client you must register for a ussd or a sender Id from available sms providers i.e SynqAfrica, Africa`s Talking and others not mentioned
+  To create a UUSD application, first as a client you must register for a ussd or a sender Id from available sms providers i.e SynqAfrica, Africa`s Talking and others not mentioned.  
   Please not the two might have very different functionalities depending on the use case but some major differences include  
   
    | USSD | SENDER ID |

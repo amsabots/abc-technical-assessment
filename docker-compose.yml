@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  abc-pg-instance:
+    image: postgres
+    volumes:
+      - $HOME/docker/volumes/postgres:/var/lib/postgresql
+      - ./bin/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./bin/data.sql:/docker-entrypoint-initdb.d/data.sql
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=dev
+    ports:
+      - "5432:5432"
+  web-app:
+    build: .
+    depends_on:
+      - abc-pg-instance
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://abc-pg-instance:5432/dev
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_DATASOURCE_PLATFORM=postgres
+      - SPING_DATASOURCE_DATABASE=postgres
+      - SPING_DATASOURCE_USERNAME=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+    ports:
+      - "3400:3400"
+
